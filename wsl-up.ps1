@@ -17,10 +17,8 @@
 #   -a, --arch <32bit|64bit>  Use the specified architecture, if the app supports it
 
 # ────────────────────────────────────────────────────────────────────────────────
-
-# ────────────────────────────────────────────────────────────────────────────────
-# powershell -executionpolicy bypass -File cli.ps1
-# ────────────────────────────────────────────────────────────────────────────────
+# powershell -executionpolicy bypass -File wsl-up.ps1
+# pwsh -executionpolicy bypass -File wsl-up.ps1
 #
 # ────────────────────────────────────────────────────────── I ──────────
 #   :::::: F U N C T I O N S : :  :   :    :     :        :          :
@@ -126,10 +124,6 @@ function abort($msg, [int] $exit_code = 1) {
       warn "uninstalling $app failed. possible cause is that $app was not installed at the time of executing $script_name script."
     }
   }
-  
-  
-  
-  
   # [ NOTE ] =>
   # - https://github.com/lukesampson/scoop/blob/master/lib/getopt.ps1
   function getopt($argv, $shortopts, $longopts) {
@@ -211,6 +205,7 @@ function abort($msg, [int] $exit_code = 1) {
   #
   $opt, $parsed_args, $err = getopt $args 'gfiksa:' 'global', 'force', 'independent', 'no-cache', 'skip','help', 'arch='
   if ($err) { "scoop install: $err";my_summary; exit 1 }
+  if (!$parsed_args) { error '<app> missing'; my_usage;my_summary;my_help; exit 1 }
   $global = $opt.g -or $opt.global
   $check_hash = !($opt.s -or $opt.skip)
   $independent = $opt.i -or $opt.independent
@@ -223,7 +218,6 @@ function abort($msg, [int] $exit_code = 1) {
       abort "ERROR: $_"
   }
   
-  if (!$parsed_args) { error '<app> missing'; my_usage;my_summary;my_help; exit 1 }
   
   if ($global -and !(is_admin)) {
       abort 'ERROR: you need admin rights to install global apps'

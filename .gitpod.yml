@@ -21,11 +21,11 @@ vscode:
     - wmaurer.change-case
     - yzane.markdown-pdf
     - yzhang.markdown-all-in-one
-    - aaron-bond.better-comments
     - EditorConfig.EditorConfig
     - emeraldwalk.RunOnSave
     - kevinkyang.auto-comment-blocks
     - ms-azuretools.vscode-docker
     - skellock.just
     - tomoyukim.vscode-mermaid-editor
+    - ms-vscode.powershell-preview
     - gruntfuggly.todo-tree
