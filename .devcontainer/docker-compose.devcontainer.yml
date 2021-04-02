@@ -1,0 +1,17 @@
+version: "3"
+services:
+  dev:
+    container_name: wsl-up-dev-container
+    build:
+      context: ../contrib/docker/alpine
+      # context: ../contrib/docker/debian
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace:cached
+    command:
+      - /bin/sh
+      - -cex
+      - >
+        sudo chown "`id -u`:`id -g`" /workspace -R &&
+        make -C /workspace clean &&
+        while sleep 1000; do :; done

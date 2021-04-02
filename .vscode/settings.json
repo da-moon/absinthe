@@ -1,0 +1,8 @@
+{
+  "terminal.integrated.shell.linux": "/bin/bash",
+  // "terminal.integrated.shell.linux": "/bin/bash",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+}
