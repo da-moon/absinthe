@@ -1,0 +1,31 @@
+image: fjolsvin/gitpod-powershell:latest
+ports:
+  - port: 3000-10000
+    onOpen: ignore
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addComment: true
+    addBadge: true
+vscode:
+  extensions:
+    - ms-vscode.powershell
+    - mutantdino.resourcemonitor
+    - redhat.vscode-yaml
+    - streetsidesoftware.code-spell-checker
+    - vscode-snippet.snippet
+    - wayou.vscode-todo-highlight
+    - wmaurer.change-case
+    - yzane.markdown-pdf
+    - yzhang.markdown-all-in-one
+    - aaron-bond.better-comments
+    - EditorConfig.EditorConfig
+    - emeraldwalk.RunOnSave
+    - kevinkyang.auto-comment-blocks
+    - ms-azuretools.vscode-docker
+    - skellock.just
+    - tomoyukim.vscode-mermaid-editor
+    - gruntfuggly.todo-tree
