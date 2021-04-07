@@ -1,5 +1,5 @@
 # Usage: wsl-up new <name> [options]
-# Summary: new wsl environment
+# Summary: new standalone wsl environment
 # Help: spins up a new wsl environment:
 #      wsl-up new alpine
 #
