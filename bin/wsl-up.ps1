@@ -8,6 +8,7 @@ param($cmd)
 set-strictmode -off
 
 . "$psscriptroot\..\lib\core.ps1"
+. "$psscriptroot\..\lib\messages.ps1"
 . "$psscriptroot\..\lib\commands.ps1"
 
 reset_aliases
