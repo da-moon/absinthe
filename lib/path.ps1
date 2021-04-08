@@ -1,7 +1,7 @@
 # ────────────────────────────────────────────────────────────────────────────────
 # snippet to source this script:
 #
-  # $path_url = 'https://raw.githubusercontent.com/da-moon/psutils/master/path.ps1'
+  # $path_url = 'https://raw.githubusercontent.com/da-moon/psutils/master/lib/path.ps1'
   # Invoke-Expression (New-Object net.webclient).downloadstring($path_url)
 # ────────────────────────────────────────────────────────────────────────────────
 
