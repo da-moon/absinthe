@@ -6,6 +6,7 @@ param($cmd)
 . "$psscriptroot\..\lib\core.ps1"
 . "$psscriptroot\..\lib\commands.ps1"
 . "$psscriptroot\..\lib\help.ps1"
+. "$psscriptroot\..\lib\alias.ps1"
 
 reset_aliases
 

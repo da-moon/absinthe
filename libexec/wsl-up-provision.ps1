@@ -13,7 +13,7 @@
 . "$psscriptroot\..\lib\core.ps1"
 . "$psscriptroot\..\lib\help.ps1"
 . "$psscriptroot\..\lib\getopt.ps1"
-. "$psscriptroot\..\lib\provision.ps1"
+. "$psscriptroot\..\lib\alias.ps1"
 
 reset_aliases
 

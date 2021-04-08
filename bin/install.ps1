@@ -51,7 +51,7 @@ if ((Get-ExecutionPolicy).ToString() -notin $allowedExecutionPolicy) {
 #
 $library_repo_root_url = "https://raw.githubusercontent.com/da-moon/wsl-up/master/lib"
 Write-Output 'Initializing...'
-$libraries = @("messages","core","shim")
+$libraries = @("messages","core","shim","network-io")
 foreach ($library in $libraries) {
   $target = $library_repo_root_url + '/' + "$library" + ".ps1"
   Invoke-Expression (new-object net.webclient).downloadstring($target)
@@ -65,7 +65,7 @@ info "downloading wsl-up zip file"
 $zipurl = 'https://github.com/da-moon/wsl-up/archive/master.zip'
 $zipfile = "$tmp_dir\wsl-up.zip"
 info "Downloading wsl-up zip file and storing it in '$tmp_dir'"
-dl $zipurl $zipfile
+download $zipurl $zipfile
 # ────────────────────────────────────────────────────────────────────────────────
 #
 # ─── EXTRACTING ─────────────────────────────────────────────────────────────────

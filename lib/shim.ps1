@@ -3,8 +3,10 @@
 #
 # [ NOTE ] =>
 # https://github.com/lukesampson/psutils/blob/master/shim.ps1
-# [ TODO ] => import path.ps1
-# [ TODO ] => import messages.ps1
+. "$psscriptroot\messages.ps1"
+. "$psscriptroot\core.ps1"
+. "$psscriptroot\path.ps1"
+
 function env($name, $global, $val = '__get') {
   $target = 'User'; if ($global) { $target = 'Machine' }
   if ($val -eq '__get') { [environment]::getEnvironmentVariable($name, $target) }

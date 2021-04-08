@@ -11,13 +11,14 @@
 
 . "$psscriptroot\..\lib\messages.ps1"
 . "$psscriptroot\..\lib\core.ps1"
+. "$psscriptroot\..\lib\alias.ps1"
 . "$psscriptroot\..\lib\help.ps1"
 . "$psscriptroot\..\lib\getopt.ps1"
 . "$psscriptroot\..\lib\distro.ps1"
 . "$psscriptroot\..\lib\network-io.ps1"
 
 reset_aliases
-if ( -Not (test_command "wsl") ) {
+if ( -Not (Get-Command "wsl" -ErrorAction Ignore) ) {
   abort "ERROR: 'wsl' was not found in PATH."
 }
 
@@ -41,7 +42,7 @@ if ($name.length -gt 1) {
     abort "ERROR: $_"
   }
 }
-if ( -Not (test_command "aria2c") )  {
+if ( -Not (Get-Command "aria2c" -ErrorAction Ignore) )  {
   warn "wsl-up prefers to use 'aria2c' for multi-connection downloads."
   warn "please install it as it was not detected in path."
 }

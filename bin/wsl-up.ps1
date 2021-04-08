@@ -9,6 +9,7 @@ set-strictmode -off
 . "$psscriptroot\..\lib\messages.ps1"
 . "$psscriptroot\..\lib\core.ps1"
 . "$psscriptroot\..\lib\commands.ps1"
+. "$psscriptroot\..\lib\alias.ps1"
 
 reset_aliases
 

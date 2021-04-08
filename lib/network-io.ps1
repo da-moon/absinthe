@@ -29,7 +29,7 @@ function native_download([string]$url, [string] $targetFile) {
   $responseStream.Dispose()
 }
 function aria2_download([string]$url, [string] $targetFile) {
-  if(-not (test_command "aria2c") ){
+  if (-not (Get-Command "aria2c" -ErrorAction Ignore) ){
     throw [System.ArgumentException] "'aria2c' was not found in PATH"
   }
   # [ NOTE ] => ensuring parent exists.
@@ -41,7 +41,7 @@ function aria2_download([string]$url, [string] $targetFile) {
   aria2c -k 1M -c -j16 -x16 --dir="$dir" --out="$file" "$url"
 }
 function download([string]$url, [string] $targetFile) {
-  if (test_command "aria2c") {
+  if (Get-Command "aria2c" -ErrorAction Ignore) {
     aria2_download "$url" "$targetFile"
   }
   else {
