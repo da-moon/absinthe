@@ -48,10 +48,14 @@ if ((Get-ExecutionPolicy).ToString() -notin $allowedExecutionPolicy) {
 # ────────────────────────────────────────────────────────────────────────────────
 # 
 # ─── GET CORE FUNCTIONS ─────────────────────────────────────────────────────────
-#   
-$core_url = 'https://raw.githubusercontent.com/da-moon/wsl-up/master/lib/core.ps1'
+#
+$library_repo_root_url = "https://raw.githubusercontent.com/da-moon/wsl-up/master/lib"
 Write-Output 'Initializing...'
-Invoke-Expression (new-object net.webclient).downloadstring($core_url)
+$libraries = @("messages","core","shim")
+foreach ($library in $libraries) {
+  $target = $library_repo_root_url + '/' + "$library" + ".ps1"
+  Invoke-Expression (new-object net.webclient).downloadstring($target)
+}
 # ────────────────────────────────────────────────────────────────────────────────
 #
 # ─── DOWNLOADING WSL-UP ─────────────────────────────────────────────────────────

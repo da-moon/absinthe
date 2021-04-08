@@ -7,6 +7,7 @@
 #   -m, --minimal             do not provision the distro with default tools
 #   -d, --distro <alpine>     Use the specified distro root file system
 
+. "$psscriptroot\..\lib\messages.ps1"
 . "$psscriptroot\..\lib\core.ps1"
 . "$psscriptroot\..\lib\help.ps1"
 . "$psscriptroot\..\lib\getopt.ps1"
