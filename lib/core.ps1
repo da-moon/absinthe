@@ -136,6 +136,10 @@ function Optimize-SecurityProtocol {
         [System.Net.ServicePointManager]::SecurityProtocol = 3072 -bor 768 -bor 192
     }
 }
+# ────────────────────────────────────────────────────────────────────────────────
+function test_command([Parameter(Mandatory)][string]$command) {
+    return [bool](Get-Command $command -ErrorAction Ignore)
+}
 #
 # ────────────────────────────────────────────────────────────────────── I ──────────
 #   :::::: E X E C U T I O N   S T A R T : :  :   :    :     :        :          :
