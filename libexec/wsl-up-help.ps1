@@ -2,6 +2,7 @@
 # Summary: Show help for a command
 param($cmd)
 
+. "$psscriptroot\..\lib\messages.ps1"
 . "$psscriptroot\..\lib\core.ps1"
 . "$psscriptroot\..\lib\commands.ps1"
 . "$psscriptroot\..\lib\help.ps1"

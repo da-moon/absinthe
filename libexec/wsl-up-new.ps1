@@ -9,6 +9,7 @@
 #   -f, --filesystem              [OPTIONAL] path to base root file system
 #   -d, --distro <arch|alpine>    [OPTIONAL] Use the specified distro root file system.
 
+. "$psscriptroot\..\lib\messages.ps1"
 . "$psscriptroot\..\lib\core.ps1"
 . "$psscriptroot\..\lib\help.ps1"
 . "$psscriptroot\..\lib\getopt.ps1"

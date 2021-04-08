@@ -6,7 +6,7 @@
 param($cmd)
 
 set-strictmode -off
-
+. "$psscriptroot\..\lib\messages.ps1"
 . "$psscriptroot\..\lib\core.ps1"
 . "$psscriptroot\..\lib\commands.ps1"
 
@@ -14,7 +14,7 @@ reset_aliases
 
 $commands = commands
 if ('--version' -contains $cmd -or (!$cmd -and '-v' -contains $args)) {
-    write-host "v0.0.1"
+    Write-Host "v0.0.1"
 }
 elseif (@($null, '--help', '/?') -contains $cmd -or $args[0] -contains '-h') { exec 'help' $args }
 elseif ($commands -contains $cmd) { exec $cmd $args }

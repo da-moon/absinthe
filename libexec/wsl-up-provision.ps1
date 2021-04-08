@@ -9,6 +9,7 @@
 #   -r, --remove-package      uninstalls given packages to install
 #   -u, --user                creates a user
 
+. "$psscriptroot\..\lib\messages.ps1"
 . "$psscriptroot\..\lib\core.ps1"
 . "$psscriptroot\..\lib\help.ps1"
 . "$psscriptroot\..\lib\getopt.ps1"
